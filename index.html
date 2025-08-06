@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Call with Authentication and Redirect</title>
+    <script>
+        async function fetchDataAndRedirect() {
+            try {
+                // Define the authentication token
+                const authToken = '13962230fe43ae5eafa9fec42de3b6859b8d9f27cdc69ae43c5332b369bb4496';
+                // Define the request body
+                const requestBody = {
+                    user_id: 'm6Q8xk4QMZUCQ2DyKKauow'
+                };
+                // Log the request body for debugging
+                console.log('Request Body:', requestBody);
+				fetch('https://apim.workato.com/bostons/test-tatiana-brat-v1/auth', {
+				  method: 'POST',
+				  headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json', 
+					'API-TOKEN': '13962230fe43ae5eafa9fec42de3b6859b8d9f27cdc69ae43c5332b369bb4496'
+				  },
+				  body: JSON.stringify(requestBody)
+				})
+				
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+            }
+        } 
+		fetchDataAndRedirect();
+        // Call the function when the page loads
+    </script>
+</head>
+<body>
+    <h1>Loading...</h1>
+</body>
+</html>
